@@ -288,7 +288,7 @@ const calculateTotal = (row: Row) => {
                   :reduce="(item) => item.lokasi_nama"
                   label="lokasi_nama"
                   placeholder="Masukan Tujuan PO"
-                  class="w-full rounded-lg border-[1.5px] border-stroke bg-transparent py-2 px-5 font-normal outline-none transition disabled:cursor-default disabled:bg-whiter"
+                  class="w-full rounded-lg bg-transparent custom-v-select font-normal outline-none transition disabled:cursor-default disabled:bg-whiter"
                   @update:modelValue="(value) => changeRowItem('id', index, value)"
                 >
                   <template #selected-option>
@@ -553,5 +553,8 @@ const calculateTotal = (row: Row) => {
 }
 .vs__clear path {
   @apply fill-current dark:text-white;
+}
+.custom-v-select .vs__dropdown-toggle {
+  padding: 0.5rem 1.25rem 0.75rem 1.25rem;
 }
 </style>

@@ -233,40 +233,40 @@ const routes = [
       requiresAuth: true // Add this line to protect this route
     }
   },
-  // Evident PWS
+  // Evident PSN
   {
-    path: '/modules/work-order/evident/pws',
-    name: 'evidentPws',
-    component: () => import('@/views/Modules/WorkOrder_evident_pws.vue'),
+    path: '/modules/work-order/evident/psn',
+    name: 'evidentPsn',
+    component: () => import('@/views/Modules/WorkOrder_evident_psn.vue'),
     meta: {
-      title: 'Evident PWS',
+      title: 'Evident PSN',
       requiresAuth: true // Add this line to protect this route
     }
   },
   {
-    path: '/modules/work-order/evident/pws/add',
-    name: 'EvidentPwsAdd',
-    component: () => import('@/views/Modules/WorkOrder_evident_pws_add.vue'),
+    path: '/modules/work-order/evident/psn/add',
+    name: 'EvidentPsnAdd',
+    component: () => import('@/views/Modules/WorkOrder_evident_psn_add.vue'),
     meta: {
-      title: 'Evident PWS Add',
+      title: 'Evident PSN Add',
       requiresAuth: true // Add this line to protect this route
     }
   },
   {
-    path: '/modules/work-order/evident/pws/detail/:logistikType/:logistikDate/:logistikNumber/:id',
-    name: 'EvidentPwsDetail',
-    component: () => import('@/views/Modules/WorkOrder_evident_pws_detail.vue'),
+    path: '/modules/work-order/evident/psn/detail/:logistikType/:logistikDate/:logistikNumber/:id',
+    name: 'EvidentPsnDetail',
+    component: () => import('@/views/Modules/WorkOrder_evident_psn_detail.vue'),
     meta: {
-      title: 'Evident PWS Detail',
+      title: 'Evident PSN Detail',
       requiresAuth: true // Add this line to protect this route
     }
   },
   {
-    path: '/modules/work-order/evident/pws/edit/:logistikType/:logistikDate/:logistikNumber/:id',
-    name: 'EvidentPwsEdit',
-    component: () => import('@/views/Modules/WorkOrder_evident_pws_edit.vue'),
+    path: '/modules/work-order/evident/psn/edit/:logistikType/:logistikDate/:logistikNumber/:id',
+    name: 'EvidentPsnEdit',
+    component: () => import('@/views/Modules/WorkOrder_evident_psn_edit.vue'),
     meta: {
-      title: 'Evident PWS Edit',
+      title: 'Evident PSN Edit',
       requiresAuth: true // Add this line to protect this route
     }
   },

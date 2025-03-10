@@ -13,14 +13,15 @@ import {
 import { useIndexStore } from "@/stores";
 
 const indexStore = useIndexStore();
-const pageTitle = ref("Evident - INFRA");
-const pageList = ref(["Work Order", "Evident", "INFRA"]);
+const pageTitle = ref("Evident - PSN");
+const pageList = ref(["Work Order", "Evident", "PSN"]);
 const dataHeader = ref([
   { name: "No.", class: "py-2 pl-3" },
   { name: "Tgl. Dibuat", class: "min-w-[100px] py-2 px-4" },
   { name: "No. Logistik", class: "min-w-[150px] py-2 px-4" },
-  { name: "Nama Project", class: "min-w-[150px] py-2 px-4" },
-  { name: "Titik Koordinat", class: "py-2 px-4" },
+  { name: "Id. User", class: "min-w-[100px] py-2 px-4" },
+  { name: "Nama. User", class: "min-w-[150px] py-2 px-4" },
+  { name: "Server", class: "py-2 px-4" },
   { name: "Kategori", class: "py-2 px-4" },
   { name: "Tr Teknis", class: "py-2 px-4" },
 ]);
@@ -85,11 +86,12 @@ const visiblePages = computed(() => {
 
   return pages;
 });
+
 // Change page function
 const getMainData = async () => {
   const data = await adminTeknis_GetDataEvidentByType(
     "N",
-    "INFRA",
+    "PSN",
     indexStore.company.companyCode,
     indexStore.user.hierarchyCode
   );
@@ -136,7 +138,7 @@ onMounted(async () => {
             </div>
           </div>
           <div class="right-data flex items-center flex-row-reverse">
-            <router-link to="/modules/work-order/evident/infra/add" class="px-1">
+            <router-link to="/modules/work-order/evident/psn/add" class="px-1">
               <svg
                 class="fill-current hover:text-primary"
                 width="22"
@@ -195,6 +197,11 @@ onMounted(async () => {
                   </p>
                 </td>
                 <td class="py-1 px-4 border">
+                  <p class="text-xs text-black dark:text-white">
+                    {{ item.Tr_teknis_pelanggan_id }}
+                  </p>
+                </td>
+                <td class="py-1 px-4 border">
                   <h5 class="font-medium text-black text-xs dark:text-white">
                     {{ item.Tr_teknis_pelanggan_nama }}
                   </h5>
@@ -219,7 +226,7 @@ onMounted(async () => {
                     <router-link
                       class="hover:text-primary"
                       :to="
-                        '/modules/work-order/evident/infra/detail/' +
+                        '/modules/work-order/evident/psn/detail/' +
                         item.Tr_teknis_logistik_id +
                         '/' +
                         item._id
@@ -239,7 +246,7 @@ onMounted(async () => {
                     <router-link
                       class="hover:text-primary"
                       :to="
-                        '/modules/work-order/evident/infra/edit/' +
+                        '/modules/work-order/evident/psn/edit/' +
                         item.Tr_teknis_logistik_id +
                         '/' +
                         item._id
